@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet var movieTable: UITableView!
+class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var movieTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,15 +18,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
-            return 2
-        }else{
-            return 30
-        }
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = movieTable.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as? MovieTableCell
+        
+        return cell!
     }
     
     

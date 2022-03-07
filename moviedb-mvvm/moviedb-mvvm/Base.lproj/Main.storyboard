@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Main View-->
         <scene sceneID="Yu1-ot-P3W">
             <objects>
-                <tableViewController id="mpF-5I-9Fq" customClass="MainView" sceneMemberID="viewController">
+                <tableViewController id="mpF-5I-9Fq" userLabel="Main View" customClass="MainView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="tD2-Ey-uby">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="134" id="xxf-jG-URx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" rowHeight="134" id="xxf-jG-URx" customClass="MovieTableCell" customModule="moviedb_mvvm" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xxf-jG-URx" id="IGO-ID-ofP">
@@ -84,6 +84,13 @@
                                         <constraint firstItem="5Gk-wi-0KS" firstAttribute="leading" secondItem="V2s-oH-EU7" secondAttribute="trailing" constant="4" id="zjO-O9-vVW"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="aboutLabel" destination="YeZ-je-2at" id="Ywu-WP-DUH"/>
+                                    <outlet property="posterImage" destination="dWw-UZ-czc" id="JRC-NY-Tfe"/>
+                                    <outlet property="starImage" destination="V2s-oH-EU7" id="spG-Sw-CSc"/>
+                                    <outlet property="starsLabel" destination="5Gk-wi-0KS" id="8s1-Wr-0M4"/>
+                                    <outlet property="titleLabel" destination="8Yh-vc-6ff" id="AMt-Fc-FaU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -91,9 +98,9 @@
                             <outlet property="delegate" destination="mpF-5I-9Fq" id="0B9-a9-fem"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Tml-fA-PqT"/>
+                    <navigationItem key="navigationItem" title="Main View" id="Tml-fA-PqT"/>
                     <connections>
-                        <outlet property="movieTable" destination="tD2-Ey-uby" id="p5n-1w-Qd6"/>
+                        <outlet property="movieTable" destination="tD2-Ey-uby" id="7Bp-6b-DsA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efz-mE-FmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
