@@ -7,12 +7,13 @@
 
 import UIKit
 
-class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var movieTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         movieTable.delegate = self
         movieTable.dataSource = self
     }
