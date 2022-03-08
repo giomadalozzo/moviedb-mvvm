@@ -28,8 +28,6 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource{
             DispatchQueue.main.async{
                 self.movieTable.reloadData()
             }
-            
-            
         }
     }
     
@@ -43,12 +41,10 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource{
         let movies = moviesVM[indexPath.row]
         
         cell?.titleLabel.text = movies.title
-        cell?.aboutLabel.text = movies.description
-        cell?.starsLabel.text = movies.overview
-        
-        // # Need to change Film Model image atribute to String (or make a function to convert it)
-        
-        // cell?.posterImage.image = UIImage(named: movies.image)
+        cell?.aboutLabel.text = movies.overview
+        cell?.starsLabel.text = String(movies.voteAverage)
+        cell?.starImage.image = UIImage(systemName: "star")
+        cell?.posterImage.image = movies.image
         
         return cell!
     }
