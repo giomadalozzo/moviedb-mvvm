@@ -20,6 +20,7 @@
 		290C1EDE27D29EB300E19691 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C1EDD27D29EB300E19691 /* MovieAPI.swift */; };
 		290C1EE027D5C20400E19691 /* MovieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C1EDF27D5C20400E19691 /* MovieTableCell.swift */; };
 		290C1EE227D5CA6F00E19691 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C1EE127D5CA6F00E19691 /* SceneDelegate.swift */; };
+		38CB91EA27D78518000F46F1 /* MovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB91E927D78518000F46F1 /* MovieTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		290C1EDD27D29EB300E19691 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		290C1EDF27D5C20400E19691 /* MovieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCell.swift; sourceTree = "<group>"; };
 		290C1EE127D5CA6F00E19691 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		38CB91E927D78518000F46F1 /* MovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				290C1EDC27D29E8A00E19691 /* API */,
+				38CB91E927D78518000F46F1 /* MovieTableViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CB91EA27D78518000F46F1 /* MovieTableViewModel.swift in Sources */,
 				290C1ED027D28AD900E19691 /* AppDelegate.swift in Sources */,
 				290C1EE227D5CA6F00E19691 /* SceneDelegate.swift in Sources */,
 				290C1ED727D298DA00E19691 /* Film.swift in Sources */,
@@ -487,7 +491,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42978H3GP3;
+				DEVELOPMENT_TEAM = YM283LC5H4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "moviedb-mvvm/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -515,7 +519,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42978H3GP3;
+				DEVELOPMENT_TEAM = YM283LC5H4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "moviedb-mvvm/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
