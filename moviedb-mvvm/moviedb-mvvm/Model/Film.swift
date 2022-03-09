@@ -6,7 +6,7 @@ struct Film: CustomStringConvertible{
     let image: UIImage
     let overview: String
     let voteAverage: Double
-    let genres: [Int]
+    let genres: String
     
     var description: String {
         return "ID: \(id), Title: \(title), Overview: \(overview), Vote: \(voteAverage) \n"

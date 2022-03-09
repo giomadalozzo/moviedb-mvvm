@@ -6,7 +6,7 @@ class MovieAPI{
     func requestGenres(completionHandler: @escaping ([Genres]) -> Void) {
         let urlString = "https://api.themoviedb.org/3/genre/movie/list?api_key=1b312813cf6df1bf51d1ada49057b17d&language=en-US"
         let url = URL(string: urlString)!
-    
+        
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data,
                   let json = try? JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed),
@@ -56,12 +56,13 @@ class MovieAPI{
                       let posterPath = filmDictionary["poster_path"] as? String,
                       let overview = filmDictionary["overview"] as? String,
                       let voteAverage = filmDictionary["vote_average"] as? Double,
-                      let genres = filmDictionary["genre_ids"] as? [Int],
+                      let genres_aux = filmDictionary["genre_ids"] as? [Int],
                       let url = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)"),
                       let data = try? Data(contentsOf: url),
                       let image = UIImage(data: data)
                 else { continue }
                 
+                var genres = self.genreIdToName(ids: genres_aux)
                 let film: Film = Film(id: id, title: title, image: image, overview: overview, voteAverage: voteAverage, genres: genres)
                 localFilmsArray.append(film)
             }
@@ -96,17 +97,29 @@ class MovieAPI{
                       let posterPath = filmDictionary["poster_path"] as? String,
                       let overview = filmDictionary["overview"] as? String,
                       let voteAverage = filmDictionary["vote_average"] as? Double,
-                      let genres = filmDictionary["genre_ids"] as? [Int],
+                      let genres_aux = filmDictionary["genre_ids"] as? [Int],
                       let url = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)"),
                       let data = try? Data(contentsOf: url),
                       let image = UIImage(data: data)
                 else { continue }
                 
-                
+                var genres = self.genreIdToName(ids: genres_aux)
                 let film = Film(id: id, title: title, image: image, overview: overview, voteAverage: voteAverage, genres: genres)
                 localFilmsArray.append(film)
             }
         }
         
+    }
+    
+    func genreIdToName(ids: [Int]) -> String {
+        var genresString = ""
+        for genreId in ids {
+            for genre in self.localGenresArray {
+                if genre.id == genreId{
+                    genresString += genre.genre+", "
+                }
+            }
+        }
+        return genresString
     }
 }
