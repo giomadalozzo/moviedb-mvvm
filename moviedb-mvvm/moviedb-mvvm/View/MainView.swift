@@ -7,7 +7,13 @@
 
 import UIKit
 
-class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource, MovieTableViewModelProtocol{
+    func reloadTableViewData() {
+        DispatchQueue.main.async {
+            self.movieTable.reloadData()
+        }
+    }
+    
     
     let movieViewModel = MovieTableViewModel()
     var moviesVM = MovieTableViewModel().movies
@@ -18,27 +24,19 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        movieViewModel.delegate = self
         movieTable.delegate = self
         movieTable.dataSource = self
-        
-        apiVM.requestPopularMovies { (movies) in
-            self.moviesVM = movies
-            
-            DispatchQueue.main.async{
-                self.movieTable.reloadData()
-            }
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moviesVM.count
+        return movieViewModel.movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = movieTable.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as? MovieTableCell
         
-        let movies = moviesVM[indexPath.row]
+        let movies = movieViewModel.movies[indexPath.row]
         
         cell?.titleLabel.text = movies.title
         cell?.aboutLabel.text = movies.overview
@@ -54,17 +52,11 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource{
         return 2
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // Lembrem-se de colocar um booleano pra controlar as requisições
-        // E lembrem-se de controlarem em que página estamos para pedirmos apenas a próxima
-        if (indexPath.row == moviesVM.count - 1) {
-            apiVM.requestPopularMovies() { (movies) in
-                self.moviesVM.append(contentsOf: movies)
-                
-                DispatchQueue.main.async {
-                    self.movieTable.reloadData()
-                }
-            }
-        }
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        // Lembrem-se de colocar um booleano pra controlar as requisições
+//        // E lembrem-se de controlarem em que página estamos para pedirmos apenas a próxima
+//        if (indexPath.row == moviesVM.count - 1) {
+//
+//        }
+//    }
 }

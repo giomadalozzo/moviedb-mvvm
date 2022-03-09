@@ -20,10 +20,10 @@
 		290C1EDE27D29EB300E19691 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C1EDD27D29EB300E19691 /* MovieAPI.swift */; };
 		290C1EE027D5C20400E19691 /* MovieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C1EDF27D5C20400E19691 /* MovieTableCell.swift */; };
 		290C1EE227D5CA6F00E19691 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C1EE127D5CA6F00E19691 /* SceneDelegate.swift */; };
+		290C1EE427D9209700E19691 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C1EE327D9209700E19691 /* DetailsViewModel.swift */; };
 		38AB57F527D91D68003CA988 /* DetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB57F427D91D68003CA988 /* DetailsTableCell.swift */; };
 		38AB57F727D91D80003CA988 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB57F627D91D80003CA988 /* DetailsView.swift */; };
 		38AB57FA27D927B2003CA988 /* DetailsOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB57F927D927B2003CA988 /* DetailsOverviewCell.swift */; };
-		290C1EE427D9209700E19691 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C1EE327D9209700E19691 /* DetailsViewModel.swift */; };
 		38CB91EA27D78518000F46F1 /* MovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB91E927D78518000F46F1 /* MovieTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,13 +62,10 @@
 		290C1EDD27D29EB300E19691 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		290C1EDF27D5C20400E19691 /* MovieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCell.swift; sourceTree = "<group>"; };
 		290C1EE127D5CA6F00E19691 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
+		290C1EE327D9209700E19691 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		38AB57F427D91D68003CA988 /* DetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableCell.swift; sourceTree = "<group>"; };
 		38AB57F627D91D80003CA988 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		38AB57F927D927B2003CA988 /* DetailsOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsOverviewCell.swift; sourceTree = "<group>"; };
-=======
-		290C1EE327D9209700E19691 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		38CB91E927D78518000F46F1 /* MovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,10 +117,10 @@
 		290C1E9E27D286B100E19691 /* moviedb-mvvm */ = {
 			isa = PBXGroup;
 			children = (
+				290C1EE527D9430C00E19691 /* Support */,
+				290C1EDC27D29E8A00E19691 /* Service */,
 				290C1ED527D28BE300E19691 /* ViewModel */,
 				290C1ED327D28BD400E19691 /* View */,
-				290C1ECF27D28AD900E19691 /* AppDelegate.swift */,
-				290C1EE127D5CA6F00E19691 /* SceneDelegate.swift */,
 				290C1EA527D286B100E19691 /* Main.storyboard */,
 				290C1EA827D286B300E19691 /* Assets.xcassets */,
 				290C1ED127D28BB700E19691 /* Model */,
@@ -174,19 +171,27 @@
 		290C1ED527D28BE300E19691 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				290C1EDC27D29E8A00E19691 /* API */,
 				38CB91E927D78518000F46F1 /* MovieTableViewModel.swift */,
 				290C1EE327D9209700E19691 /* DetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		290C1EDC27D29E8A00E19691 /* API */ = {
+		290C1EDC27D29E8A00E19691 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				290C1EDD27D29EB300E19691 /* MovieAPI.swift */,
 			);
-			path = API;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		290C1EE527D9430C00E19691 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				290C1ECF27D28AD900E19691 /* AppDelegate.swift */,
+				290C1EE127D5CA6F00E19691 /* SceneDelegate.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

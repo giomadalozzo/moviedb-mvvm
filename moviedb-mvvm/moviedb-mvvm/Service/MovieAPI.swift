@@ -1,9 +1,9 @@
 import UIKit
 
 class MovieAPI{
-    var localGenresArray: [Genres] = []
     
     func requestGenres(completionHandler: @escaping ([Genres]) -> Void) {
+        print("executou")
         let urlString = "https://api.themoviedb.org/3/genre/movie/list?api_key=1b312813cf6df1bf51d1ada49057b17d&language=en-US"
         let url = URL(string: urlString)!
         
@@ -16,22 +16,22 @@ class MovieAPI{
                 completionHandler([])
                 return
             }
-            
+            var localGenresArray:[Genres] = []
             for genreDictionary in genres {
                 guard let id = genreDictionary["id"] as? Int,
                       let genre = genreDictionary["name"] as? String
                 else { continue }
                 
                 let genres = Genres(id: id, genre: genre)
-                self.localGenresArray.append(genres)
+                localGenresArray.append(genres)
             }
             
-            completionHandler(self.localGenresArray)
+            completionHandler(localGenresArray)
         }
         .resume()
     }
     
-    func requestPopularMovies(completionHandler: @escaping ([Film]) -> Void) {
+    func requestPopularMovies(localGenresArray: [Genres],completionHandler: @escaping ([Film]) -> Void) {
         let urlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=1b312813cf6df1bf51d1ada49057b17d&language=en-US&page=1"
         let url = URL(string: urlString)!
         
@@ -61,8 +61,8 @@ class MovieAPI{
                       let data = try? Data(contentsOf: url),
                       let image = UIImage(data: data)
                 else { continue }
-                
-                var genres = self.genreIdToName(ids: genres_aux)
+                let genres = self.genreIdToName(ids: genres_aux, localGenresArray: localGenresArray)
+                print(genres)
                 let film: Film = Film(id: id, title: title, image: image, overview: overview, voteAverage: voteAverage, genres: genres)
                 localFilmsArray.append(film)
             }
@@ -72,7 +72,7 @@ class MovieAPI{
         .resume()
     }
     
-    func requestNowPlaying(completionHandler: @escaping ([Film]) -> Void){
+    func requestNowPlaying(localGenresArray: [Genres],completionHandler: @escaping ([Film]) -> Void){
         let urlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=1b312813cf6df1bf51d1ada49057b17d&language=en-US&page=1"
         
         let url = URL(string: urlString)!
@@ -103,7 +103,7 @@ class MovieAPI{
                       let image = UIImage(data: data)
                 else { continue }
                 
-                var genres = self.genreIdToName(ids: genres_aux)
+                let genres = self.genreIdToName(ids: genres_aux, localGenresArray: localGenresArray)
                 let film = Film(id: id, title: title, image: image, overview: overview, voteAverage: voteAverage, genres: genres)
                 localFilmsArray.append(film)
             }
@@ -111,15 +111,16 @@ class MovieAPI{
         
     }
     
-    func genreIdToName(ids: [Int]) -> String {
+    func genreIdToName(ids: [Int], localGenresArray: [Genres]) -> String {
         var genresString = ""
         for genreId in ids {
-            for genre in self.localGenresArray {
+            for genre in localGenresArray {
                 if genre.id == genreId{
-                    genresString += genre.genre+", "
+                    genresString = genresString + genre.genre + ", "
                 }
             }
         }
-        return genresString
+        let result = genresString.dropLast(2) + "."
+        return String(result)
     }
 }
