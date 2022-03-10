@@ -62,11 +62,6 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource, Mo
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        lineSelected = indexPath.row
-        sectionSelected = indexPath.section
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = movieTable.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as? MovieTableCell
         
@@ -94,5 +89,19 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource, Mo
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let detailsView = segue.destination as? DetailsView
+        
+        lineSelected = movieTable.indexPathForSelectedRow?.row
+        sectionSelected = movieTable.indexPathForSelectedRow?.section
+        
+        if sectionSelected == 0{
+            detailsView?.movie = movieViewModel.moviesPopular[lineSelected!]
+        }else{
+            detailsView?.movie = movieViewModel.moviesPlaying[lineSelected!]
+        }
     }
 }

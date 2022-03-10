@@ -204,6 +204,7 @@
                                                 <constraint firstItem="jdh-iO-bhO" firstAttribute="leading" secondItem="CfY-l0-V4x" secondAttribute="leadingMargin" id="qCn-8G-H9l"/>
                                                 <constraint firstItem="d0P-A2-kDA" firstAttribute="leading" secondItem="CfY-l0-V4x" secondAttribute="leadingMargin" id="sTr-1X-qf0"/>
                                                 <constraint firstItem="Ta0-cR-oaS" firstAttribute="top" secondItem="P3z-WN-sCl" secondAttribute="bottom" constant="15" id="t97-d8-qif"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="d0P-A2-kDA" secondAttribute="bottom" constant="29" id="xkK-4b-plj"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="d0P-A2-kDA" secondAttribute="trailing" id="xyg-wR-wtQ"/>
                                             </constraints>
                                         </tableViewCellContentView>

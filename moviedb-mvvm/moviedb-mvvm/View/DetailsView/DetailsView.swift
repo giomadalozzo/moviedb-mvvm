@@ -13,8 +13,8 @@ class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var tableView: UITableView!
     
     var movie: Film?
-    var genres: [Genres] = []
-    var stringGenres: String?
+    var indexPathRow: Int?
+    var indexPathSection: Int?
     
     let movieViewModel = MovieTableViewModel()
     var moviesPopular = MovieTableViewModel().moviesPopular
@@ -22,7 +22,6 @@ class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         }
@@ -38,6 +37,9 @@ class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "mainDetails", for: indexPath) as? DetailsTableCell
+        cell?.posterImage.image = movie?.image
+        cell?.genresLabel.text = movie?.genres
+        cell?.starsLabel.text = String(movie!.voteAverage)
             return cell!
     }
 }
