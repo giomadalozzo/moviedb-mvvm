@@ -13,6 +13,6 @@ class DetailsTableCell: UITableViewCell{
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var overviewTextLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var titleOverviewLabel: UILabel!
 }

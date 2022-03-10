@@ -13,6 +13,10 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource, Mo
     var moviesPopular = MovieTableViewModel().moviesPopular
     var moviesPlaying = MovieTableViewModel().moviesPlaying
     let apiVM = MovieTableViewModel().apirequest
+    
+    var lineSelected: Int?
+    var sectionSelected: Int?
+    
 
     
     @IBOutlet weak var movieTable: UITableView!
@@ -56,6 +60,11 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource, Mo
         }else{
             return movieViewModel.moviesPlaying.count
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        lineSelected = indexPath.row
+        sectionSelected = indexPath.section
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

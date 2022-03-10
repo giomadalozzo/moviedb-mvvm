@@ -116,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="-16" y="152"/>
         </scene>
-        <!--Details View-->
+        <!--Details-->
         <scene sceneID="LX3-9l-f9a">
             <objects>
                 <viewController id="Fs8-6q-ohW" customClass="DetailsView" customModule="moviedb_mvvm" customModuleProvider="target" sceneMemberID="viewController">
@@ -208,12 +208,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="genresLabel" destination="P3z-WN-sCl" id="wuK-xd-6Do"/>
-                                            <outlet property="overviewTextLabel" destination="d0P-A2-kDA" id="6dG-Sh-Lee"/>
-                                            <outlet property="posterImage" destination="jdh-iO-bhO" id="X9f-PF-uQ1"/>
-                                            <outlet property="starsLabel" destination="Ta0-cR-oaS" id="jRd-Eb-wrJ"/>
-                                            <outlet property="titleLabel" destination="gbw-BP-T9M" id="4gg-RD-GEO"/>
-                                            <outlet property="titleOverviewLabel" destination="mgg-bx-CKb" id="HFL-4J-GfM"/>
+                                            <outlet property="genresLabel" destination="P3z-WN-sCl" id="qbP-eA-606"/>
+                                            <outlet property="overviewLabel" destination="d0P-A2-kDA" id="9fu-CB-dEM"/>
+                                            <outlet property="posterImage" destination="jdh-iO-bhO" id="8nZ-09-D5v"/>
+                                            <outlet property="starsLabel" destination="Ta0-cR-oaS" id="67k-WZ-Td1"/>
+                                            <outlet property="titleLabel" destination="gbw-BP-T9M" id="fqO-ty-ON7"/>
+                                            <outlet property="titleOverviewLabel" destination="mgg-bx-CKb" id="E3I-Jf-11T"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -228,9 +228,9 @@
                             <constraint firstItem="7tt-JY-kSr" firstAttribute="bottom" secondItem="enK-Wv-A8k" secondAttribute="bottom" id="b4c-Mk-MQu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8pN-Lk-FmF"/>
+                    <navigationItem key="navigationItem" title="Details" id="8pN-Lk-FmF"/>
                     <connections>
-                        <outlet property="tableView" destination="enK-Wv-A8k" id="DLd-qV-hWO"/>
+                        <outlet property="tableView" destination="enK-Wv-A8k" id="LOz-PZ-r0y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTA-Ea-52e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
