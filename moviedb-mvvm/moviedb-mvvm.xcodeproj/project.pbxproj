@@ -23,7 +23,6 @@
 		290C1EE427D9209700E19691 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C1EE327D9209700E19691 /* DetailsViewModel.swift */; };
 		38AB57F527D91D68003CA988 /* DetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB57F427D91D68003CA988 /* DetailsTableCell.swift */; };
 		38AB57F727D91D80003CA988 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB57F627D91D80003CA988 /* DetailsView.swift */; };
-		38AB57FA27D927B2003CA988 /* DetailsOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB57F927D927B2003CA988 /* DetailsOverviewCell.swift */; };
 		38CB91EA27D78518000F46F1 /* MovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB91E927D78518000F46F1 /* MovieTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +64,6 @@
 		290C1EE327D9209700E19691 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		38AB57F427D91D68003CA988 /* DetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableCell.swift; sourceTree = "<group>"; };
 		38AB57F627D91D80003CA988 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
-		38AB57F927D927B2003CA988 /* DetailsOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsOverviewCell.swift; sourceTree = "<group>"; };
 		38CB91E927D78518000F46F1 /* MovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +106,6 @@
 			children = (
 				38AB57F427D91D68003CA988 /* DetailsTableCell.swift */,
 				38AB57F627D91D80003CA988 /* DetailsView.swift */,
-				38AB57F927D927B2003CA988 /* DetailsOverviewCell.swift */,
 			);
 			path = DetailsView;
 			sourceTree = "<group>";
@@ -344,7 +341,6 @@
 				38AB57F527D91D68003CA988 /* DetailsTableCell.swift in Sources */,
 				38AB57F727D91D80003CA988 /* DetailsView.swift in Sources */,
 				38CB91EA27D78518000F46F1 /* MovieTableViewModel.swift in Sources */,
-				38AB57FA27D927B2003CA988 /* DetailsOverviewCell.swift in Sources */,
 				290C1ED027D28AD900E19691 /* AppDelegate.swift in Sources */,
 				290C1EE227D5CA6F00E19691 /* SceneDelegate.swift in Sources */,
 				290C1ED727D298DA00E19691 /* Film.swift in Sources */,

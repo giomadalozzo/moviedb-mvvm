@@ -9,9 +9,10 @@ import UIKit
 
 class DetailsTableCell: UITableViewCell{
     
-    @IBOutlet weak var starLabel: UILabel!
+    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var starImage: UIImageView!
-    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var overviewTextLabel: UILabel!
+    @IBOutlet weak var titleOverviewLabel: UILabel!
 }

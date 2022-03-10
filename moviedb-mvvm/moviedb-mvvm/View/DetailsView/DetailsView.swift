@@ -26,45 +26,17 @@ class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "mainDetails", for: indexPath) as? DetailsTableCell
             
-            
-            return UITableViewCell()
-            
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "overview", for: indexPath) as? DetailsOverviewCell
-            cell?.titleLabel.text = "Overview"
-            cell?.titleLabel.text = self.movie?.overview
-            cell?.titleLabel.numberOfLines = 0
-            cell?.titleLabel.lineBreakMode = .byWordWrapping
-            
             return cell!
-        }
     }
-    
-    func generateGenresString(genres: [Int]) -> String {
-        var string: String = ""
-        
-        for genreID in genres{
-            for genre in self.genres{
-                if genre.id == genreID {
-                    string = string + genre.genre + ", "
-                }
-            }
-        }
-        let stringOutput = String(string.dropLast().dropLast())
-        
-        return stringOutput
-    }
-
-    
-    
-    
-    
 }
     

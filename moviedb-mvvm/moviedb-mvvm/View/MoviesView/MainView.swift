@@ -86,12 +86,4 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource, Mo
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        // Lembrem-se de colocar um booleano pra controlar as requisições
-//        // E lembrem-se de controlarem em que página estamos para pedirmos apenas a próxima
-//        if (indexPath.row == moviesVM.count - 1) {
-//
-//        }
-//    }
 }
