@@ -39,7 +39,7 @@ class MovieTableViewModel {
     }
     
     func getNowPlayingMovies(){
-        apirequest.requestPopularMovies(localGenresArray: self.localGenresArray) { [weak self] moviesPlaying in
+        apirequest.requestNowPlaying(localGenresArray: self.localGenresArray) { [weak self] moviesPlaying in
             guard let self = self else {return}
             self.moviesPlaying = moviesPlaying
             
