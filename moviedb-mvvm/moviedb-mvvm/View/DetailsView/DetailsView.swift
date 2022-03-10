@@ -13,12 +13,6 @@ class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var tableView: UITableView!
     
     var movie: Film?
-    var indexPathRow: Int?
-    var indexPathSection: Int?
-    
-    let movieViewModel = MovieTableViewModel()
-    var moviesPopular = MovieTableViewModel().moviesPopular
-    var moviesPlaying = MovieTableViewModel().moviesPlaying
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +32,13 @@ class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "mainDetails", for: indexPath) as? DetailsTableCell
         cell?.posterImage.image = movie?.image
+        cell?.titleLabel.text = movie?.title
         cell?.genresLabel.text = movie?.genres
         cell?.starsLabel.text = String(movie!.voteAverage)
+        cell?.overviewLabel.text = movie?.overview
+        cell?.overviewLabel.numberOfLines = 0
+        cell?.overviewLabel.lineBreakMode = .byWordWrapping
+        cell?.titleOverviewLabel.text = "Overview"
             return cell!
     }
 }

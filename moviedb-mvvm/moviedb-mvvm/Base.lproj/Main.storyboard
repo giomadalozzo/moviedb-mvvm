@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View-->
+        <!--Movies-->
         <scene sceneID="eU3-gG-npI">
             <objects>
                 <viewController id="CTb-7Z-zSZ" customClass="MainView" customModule="moviedb_mvvm" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,7 +107,7 @@
                             <constraint firstItem="Mdb-2P-IYv" firstAttribute="top" secondItem="YCN-GF-qCQ" secondAttribute="top" id="xT9-xQ-5z9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3e7-3l-MiH"/>
+                    <navigationItem key="navigationItem" title="Movies" id="3e7-3l-MiH"/>
                     <connections>
                         <outlet property="movieTable" destination="Mdb-2P-IYv" id="ftD-45-fpW"/>
                     </connections>
@@ -142,7 +142,7 @@
                                                         <constraint firstAttribute="height" constant="190" id="ZEn-Jt-PGS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dnT-A5-f6l" userLabel="Star Image">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dnT-A5-f6l" userLabel="Star Image">
                                                     <rect key="frame" x="162" y="179.5" width="14" height="14"/>
                                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -150,13 +150,13 @@
                                                         <constraint firstAttribute="width" constant="14" id="tKN-bv-yYl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbw-BP-T9M">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbw-BP-T9M">
                                                     <rect key="frame" x="162" y="91" width="204" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3z-WN-sCl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3z-WN-sCl">
                                                     <rect key="frame" x="162" y="122" width="204" height="42"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="42" id="yjZ-mE-aq1"/>
@@ -256,6 +256,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
