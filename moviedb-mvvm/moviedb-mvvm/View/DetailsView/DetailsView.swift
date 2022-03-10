@@ -11,6 +11,7 @@ import UIKit
 
 class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     var movie: Film?
@@ -31,12 +32,9 @@ class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "mainDetails", for: indexPath) as? DetailsTableCell
-            cell?.posterImage.image = self.movie?.image
-            cell?.starImage.image = UIImage(systemName: "star")
-            cell?.titleLabel.text = self.movie?.title
-            cell?.starCell.text = String(self.movie?.voteAverage ?? 5.0)
             
-            return cell!
+            
+            return UITableViewCell()
             
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "overview", for: indexPath) as? DetailsOverviewCell
@@ -59,7 +57,7 @@ class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 }
             }
         }
-        var stringOutput = String(string.dropLast().dropLast())
+        let stringOutput = String(string.dropLast().dropLast())
         
         return stringOutput
     }

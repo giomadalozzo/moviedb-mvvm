@@ -3,7 +3,6 @@ import UIKit
 class MovieAPI{
     
     func requestGenres(completionHandler: @escaping ([Genres]) -> Void) {
-        print("executou")
         let urlString = "https://api.themoviedb.org/3/genre/movie/list?api_key=1b312813cf6df1bf51d1ada49057b17d&language=en-US"
         let url = URL(string: urlString)!
         
@@ -32,7 +31,7 @@ class MovieAPI{
     }
     
     func requestPopularMovies(localGenresArray: [Genres],completionHandler: @escaping ([Film]) -> Void) {
-        let urlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=1b312813cf6df1bf51d1ada49057b17d&language=en-US&page=1"
+        let urlString = "https://api.themoviedb.org/3/movie/popular?api_key=1b312813cf6df1bf51d1ada49057b17d&language=en-US&page=6"
         let url = URL(string: urlString)!
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -62,7 +61,6 @@ class MovieAPI{
                       let image = UIImage(data: data)
                 else { continue }
                 let genres = self.genreIdToName(ids: genres_aux, localGenresArray: localGenresArray)
-                print(genres)
                 let film: Film = Film(id: id, title: title, image: image, overview: overview, voteAverage: voteAverage, genres: genres)
                 localFilmsArray.append(film)
             }
@@ -105,6 +103,7 @@ class MovieAPI{
                 
                 let genres = self.genreIdToName(ids: genres_aux, localGenresArray: localGenresArray)
                 let film = Film(id: id, title: title, image: image, overview: overview, voteAverage: voteAverage, genres: genres)
+                
                 localFilmsArray.append(film)
             }
         }

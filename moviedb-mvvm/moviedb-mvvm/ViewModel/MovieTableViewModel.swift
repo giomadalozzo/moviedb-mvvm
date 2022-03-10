@@ -12,9 +12,12 @@ protocol MovieTableViewModelProtocol: AnyObject {
 }
 
 class MovieTableViewModel {
-    init(){}
+    init(){
+        getGenres()
+    }
     
-    var movies: [Film] = []
+    var moviesPopular: [Film] = []
+    var moviesPlaying: [Film] = []
     let apirequest = MovieAPI()
     var localGenresArray: [Genres] = []
     
@@ -27,18 +30,18 @@ class MovieTableViewModel {
     }
     
     func getPopularMovies(){
-        apirequest.requestPopularMovies(localGenresArray: self.localGenresArray) { [weak self] movies in
+        apirequest.requestPopularMovies(localGenresArray: self.localGenresArray) { [weak self] moviesPopular in
             guard let self = self else {return}
-            self.movies = movies
+            self.moviesPopular = moviesPopular
             self.delegate?.reloadTableViewData()
         }
     
     }
     
     func getNowPlayingMovies(){
-        apirequest.requestPopularMovies(localGenresArray: self.localGenresArray) { [weak self] movies in
+        apirequest.requestPopularMovies(localGenresArray: self.localGenresArray) { [weak self] moviesPlaying in
             guard let self = self else {return}
-            self.movies.append(contentsOf: movies)
+            self.moviesPlaying = moviesPlaying
             
             self.delegate?.reloadTableViewData()
         }
