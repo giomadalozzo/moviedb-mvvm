@@ -19,11 +19,14 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource, Mo
     
 
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var movieTable: UITableView!
     
     func reloadTableViewData() {
         DispatchQueue.main.async {
             self.movieTable.reloadData()
+            self.movieTable.isHidden = false
+            self.spinner.stopAnimating()
         }
     }
     
@@ -32,6 +35,10 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource, Mo
         movieViewModel.delegate = self
         movieTable.delegate = self
         movieTable.dataSource = self
+        movieTable.isHidden = true
+        spinner.startAnimating()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         movieViewModel.getPopularMovies()
         movieViewModel.getNowPlayingMovies()
     }

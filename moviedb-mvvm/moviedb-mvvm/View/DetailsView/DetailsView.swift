@@ -33,6 +33,8 @@ class DetailsView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueReusableCell(withIdentifier: "mainDetails", for: indexPath) as? DetailsTableCell
         cell?.posterImage.image = movie?.image
         cell?.titleLabel.text = movie?.title
+        cell?.titleLabel.numberOfLines = 0
+        cell?.titleLabel.lineBreakMode = .byWordWrapping
         cell?.genresLabel.text = movie?.genres
         cell?.starsLabel.text = String(movie!.voteAverage)
         cell?.overviewLabel.text = movie?.overview
